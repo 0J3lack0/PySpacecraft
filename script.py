@@ -14,8 +14,7 @@ v.pop()   #array'deki son link çıkarıtılır.
 #v.attrs['href'] istediğimiz işlemi yapacaktır.
 
 for i in range(0,len(v)):
-	v[i] = v[i].attrs['href']
-  
-  #url lerimizi oluşturalım
-for j in range(0,len(v))
-     u[j] = url2+v[j]
+    v[i] = v[i].attrs['href']
+    for j in range(0,len(v)):
+        v[j] = url2+v[j]
+
