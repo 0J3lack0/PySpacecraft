@@ -15,6 +15,8 @@ v.pop()   #array'deki son link çıkarıtılır.
 
 for i in range(0,len(v)):
     v[i] = v[i].attrs['href']
-    for j in range(0,len(v)):
-        v[j] = url2+v[j]
 
+for j in range(0,len(v)):
+    v[j] = url2+v[j]
+
+print(v)
