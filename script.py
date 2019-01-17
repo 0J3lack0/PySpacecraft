@@ -19,4 +19,5 @@ for i in range(0,len(v)):
 for j in range(0,len(v)):
     v[j] = url2+v[j]
 
-print(v)
+print(v) # v bir array ve bu array e ait elemanlar belirtilen yıla ait verilerin bulunduğu linleri içeriyor
+# bu linklere girip General Information ve Asymptotic plasma parameters adlı tabloları okutmalıyız!
