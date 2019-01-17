@@ -51,7 +51,7 @@ for i in range(0, len(v)):
     if os.path.exists(currFile):
         os.remove(currFile)
     
-    workbook  = xlsxwriter.Workbook('data/' + currName + '.xlsx')
+    workbook  = xlsxwriter.Workbook(currFile)
     worksheet = workbook.add_worksheet()
     row       = 1
     column    = 0
