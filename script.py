@@ -3,6 +3,11 @@ import xlsxwriter
 import os
 from bs4 import BeautifulSoup as bs
 
+linkAffix  = ['/ac_master_1998.html','/ac_master_1999.html','/ac_master_2000.html','ac_master_2001.html',
+              'ac_master_2002.html','ac_master_2003.html','ac_master_2004.html','ac_master_2005.html',
+              'ac_master_2006.html','ac_master_2007.html','ac_master_2008.html','ac_master_2009.html',
+              'ac_master_2010.html','ac_master_2011.html','ac_master_2012.html','ac_master_2013.html',
+              'ac_master_2014.html']
 linksPage  = 'https://www.cfa.harvard.edu/shocks/ac_master_data/ac_master_1998.html'
 baseURL    = 'https://www.cfa.harvard.edu/shocks/ac_master_data/'
 r          = requests.get(linksPage)
@@ -70,3 +75,6 @@ for i in range(0, len(v)):
         row += 1
 
     workbook.close()
+
+
+
