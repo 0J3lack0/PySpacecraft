@@ -9,11 +9,7 @@ r          = requests.get(linksPage)
 
 soup = bs(r.content, 'html.parser')
 v    = soup.find('table', attrs={'class': 'content_table'}).find_all('a')
-v.pop()   #array'deki son link çıkarıtılır.
-
-
-#örneğin   v[1] = <a href="./00000/ac_master_00000.html">link</a> bize ilk elemanda ki  ./00000/ac_master_00000.html  kısım lazım ve bunu tüm array elemanları için uygulamalıyız
-#v.attrs['href'] istediğimiz işlemi yapacaktır.
+v.pop()
 
 for i in range(0, len(v)):
     v[i] = v[i].attrs['href']
