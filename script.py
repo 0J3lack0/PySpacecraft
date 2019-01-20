@@ -10,7 +10,7 @@ years      = ['1998','1999','2000','2001','2002','2004','2005','2006',
 
 for i in range(0, len(years)):
     currName = years[i]
-    currLink = baseURL + pagePrefix + currName + '.html'
+    currLink = baseURL + pathPrefix + currName + '.html'
     currFile = 'data/' + currName + '.xlsx'
 
     print('')
