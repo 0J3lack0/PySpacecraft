@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup as bs
 
 baseURL    = 'https://www.cfa.harvard.edu/shocks/wi_data/'
 pathPrefix = 'wi_'
-years      = ['1998','1999','2000','2001','2002','2004','2005','2006',
-              '2007','2008','2009','2010','2011','2012','2013','2014']
+years      = ['1995', '1996', '1997','1998','1999','2000','2001','2002', '2003','2004','2005','2006',
+              '2007','2008','2009','2010','2011','2012','2013','2014', '2015', '2016', '2017']
 
 for i in range(0, len(years)):
     currName = years[i]
@@ -37,6 +37,7 @@ for i in range(0, len(years)):
         v[i] = baseURL + v[i]
 
     for i in range(0, len(v)):
+        counter = str(i)
         print('Processing URL: ' + v[i])
         generalData = {}
         plasmaData = {}
@@ -61,9 +62,9 @@ for i in range(0, len(years)):
                 cleanDataValue = bs(currRow[1].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
                 plasmaData[cleanDataName] = cleanDataValue
 
-        worksheet       = workbook.add_worksheet(generalData['Fractional day of year'] + '_' + generalData['Arrival time of shock [seconds of day]'])
-        row             = 1
-        column          = 0
+        worksheet = workbook.add_worksheet(generalData['Fractional day of year'] + '_' + counter)
+        row       = 1
+        column    = 0
 
         worksheet.set_column(0, 1, 50)
         worksheet.write(0, 0, 'General Information', cellFormat)

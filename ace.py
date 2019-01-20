@@ -37,6 +37,7 @@ for i in range(0, len(years)):
         v[i] = baseURL + v[i]
 
     for i in range(0, len(v)):
+        counter = str(i)
         print('Processing URL: ' + v[i])
         generalData = {}
         plasmaData = {}
@@ -61,9 +62,9 @@ for i in range(0, len(years)):
                 cleanDataValue = bs(currRow[1].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
                 plasmaData[cleanDataName] = cleanDataValue
 
-        worksheet = workbook.add_worksheet(generalData['Fractional day of year'] + '_' + generalData['Arrival time of shock [seconds of day]'])
-        row             = 1
-        column          = 0
+        worksheet = workbook.add_worksheet(generalData['Fractional day of year'] + '_' + counter)
+        row       = 1
+        column    = 0
 
         worksheet.set_column(0, 1, 50)
         worksheet.write(0, 0, 'General Information', cellFormat)
