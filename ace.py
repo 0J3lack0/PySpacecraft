@@ -11,7 +11,7 @@ years      = ['1998','1999','2000','2001','2002','2004','2005','2006',
 for i in range(0, len(years)):
     currName = years[i]
     currLink = baseURL + pathPrefix + currName + '.html'
-    currFile = 'data/' + currName + '.xlsx'
+    currFile = 'ace_data/' + currName + '.xlsx'
 
     print('')
     print('#########################################################################')
@@ -61,7 +61,7 @@ for i in range(0, len(years)):
                 cleanDataValue = bs(currRow[1].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
                 plasmaData[cleanDataName] = cleanDataValue
 
-        worksheet       = workbook.add_worksheet(generalData['Fractional day of year'])
+        worksheet = workbook.add_worksheet(generalData['Fractional day of year'] + '_' + generalData['Arrival time of shock [seconds of day]'])
         row             = 1
         column          = 0
 
