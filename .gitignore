@@ -1,3 +1,4 @@
 ace_data/*.xlsx
 wind_data/*.xlsx
+*.jpg
 .idea/

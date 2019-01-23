@@ -30,8 +30,9 @@ for i in range(0, len(years)):
 
     base2Url = 'http://www.specola.ch/drawings/'
     downlURL = base2Url + v[i]
-
-    with open('pic1.jpg', 'wb') as handle:
+    t        = v[i].replace("/", "")
+    print(t)
+    with open(t, 'wb') as handle:
         response = requests.get(downlURL, stream=True)
 
         if not response.ok:
