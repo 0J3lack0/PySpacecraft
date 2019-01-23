@@ -24,43 +24,28 @@ for i in range(0, len(years)):
     r        = requests.get(currLink)
     soup     = bs(r.content, 'html.parser')
     v        = soup.find('h1').find_all('a')
-
-    for i in range(0, len(v)):
-        v[i] = v[i].attrs['href']
-
+    t        = {}
+    downlURL = {}
     base2Url = 'http://www.specola.ch/drawings/'
-    downlURL = base2Url + v[i]
-    t        = v[i].replace("/", "")
-    print(t)
-    with open(t, 'wb') as handle:
-        response = requests.get(downlURL, stream=True)
-
-        if not response.ok:
-            print(response)
-        for block in response.iter_content(1024):
-            if not block:
-                break
-
-            handle.write(block)
+    for i in range(0, len(v)):
+        v[i]        = v[i].attrs['href']
+        t[i]        = v[i].replace("/", "")
+        downlURL[i] = base2Url + v[i]
 
 
 
 
 
 
+    for i in range(0, len(t)):
+        with open(t[i], 'wb') as handle:
+            print('Downloading URL' + downlURL[i])
+            response = requests.get(downlURL[i], stream=True)
 
+            if not response.ok:
+                print(response)
+            for block in response.iter_content(1024):
+                if not block:
+                    break
 
-
-
-
-
-
-
-
-
- #   image    = urllib.URLopener()
-
- #  filename = downlURL.split('/')[1]
- #   t        = requests.get(downlURL, allow_redirects=True)
-
- #  open(filename, 'wb').write(t.content)
+                handle.write(block)
