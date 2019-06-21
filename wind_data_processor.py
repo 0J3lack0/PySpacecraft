@@ -94,28 +94,28 @@ def calculate_data(sheet, ref, n2Ref):
     maxN2 = sheet.cell_value(ref[1] + 374, ref[2] - 1)
 
     if n2Ref < minN2:
-        data['Mach'] = '1.1500'
-        data['M2/M1'] = '0.76312'
-        data['M2'] = '0.8775852677'
-        data['Kappa_1'] = '1.22383'
-        data['U2/U1'] = '0.81711'
+        data['Mach']        = '1.1500'
+        data['M2/M1']       = '0.76312'
+        data['M2']          = '0.8775852677'
+        data['Kappa_1']     = '1.22383'
+        data['U2/U1']       = '0.81711'
         data['cs2^2/cs1^2'] = '1.14650'
-        data['n1'] = sheet.cell_value(ref[1] + 3, ref[2] - 1)
-        data['u1'] = sheet.cell_value(ref[1] + 3, ref[2])
-        data['n2'] = sheet.cell_value(ref[1] + 5, ref[2] - 1)
-        data['u2'] = sheet.cell_value(ref[1] + 5, ref[2])
+        data['n1']          = sheet.cell_value(ref[1] + 3, ref[2] - 1)
+        data['u1']          = sheet.cell_value(ref[1] + 3, ref[2])
+        data['n2']          = sheet.cell_value(ref[1] + 5, ref[2] - 1)
+        data['u2']          = sheet.cell_value(ref[1] + 5, ref[2])
 
     elif n2Ref > maxN2:
-        data['Mach'] = '5000'
-        data['M2/M1'] = '0'
-        data['M2'] = '0'
-        data['Kappa_1'] = '0'
-        data['U2/U1'] = '0'
+        data['Mach']        = '5000'
+        data['M2/M1']       = '0'
+        data['M2']          = '0'
+        data['Kappa_1']     = '0'
+        data['U2/U1']       = '0'
         data['cs2^2/cs1^2'] = '0'
-        data['n1'] = '0'
-        data['u1'] = '0'
-        data['n2'] = '0'
-        data['u2'] = '0'
+        data['n1']          = '0'
+        data['u1']          = '0'
+        data['n2']          = '0'
+        data['u2']          = '0'
 
     else:
         minRefRow, maxRefRow = find_min_max_ref_row(sheet, ref, n2Ref)
