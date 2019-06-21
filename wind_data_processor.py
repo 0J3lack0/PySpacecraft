@@ -1,9 +1,6 @@
 import xlrd
 import xlwt
-import os
-import json
 import itertools
-
 
 readBook        = xlrd.open_workbook('wind_data.xlsx')
 writeBook       = xlwt.Workbook()
