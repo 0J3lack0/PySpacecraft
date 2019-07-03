@@ -67,7 +67,7 @@ for i in range(0, len(years)):
         row       = 1
         column    = 0
 
-        worksheet.set_column(0, 1, 50)
+        worksheet.set_column(0, 2, 50)
         worksheet.write(0, 0, 'General Information', cellFormat)
 
         for key in generalData:
