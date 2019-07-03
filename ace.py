@@ -58,9 +58,10 @@ for i in range(0, len(years)):
             currRow = plasmaInfo[i].find_all('td')
 
             if currRow:
-                cleanDataName = bs(currRow[0].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
-                cleanDataValue = bs(currRow[1].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
-                plasmaData[cleanDataName] = cleanDataValue
+                cleanDataName             = bs(currRow[0].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
+                cleanDataUpstreamValue    = bs(currRow[1].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
+                cleanDataDownstreamValue  = bs(currRow[2].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
+                plasmaData[cleanDataName] = [cleanDataUpstreamValue, cleanDataDownstreamValue]
 
         worksheet = workbook.add_worksheet(generalData['Fractional day of year'] + '_' + counter)
         row       = 1
