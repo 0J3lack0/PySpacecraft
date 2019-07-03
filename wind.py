@@ -81,7 +81,8 @@ for i in range(0, len(years)):
 
         for key in plasmaData:
             worksheet.write(row, column, key, cellFormat)
-            worksheet.write(row, column + 1, plasmaData[key], cellFormat)
+            worksheet.write(row, column + 1, plasmaData[key][0], cellFormat)
+            worksheet.write(row, column + 2, plasmaData[key][1], cellFormat)
             row += 1
 
     print('Writing xlsx file...')
