@@ -61,9 +61,12 @@ for i in range(0, len(years)):
                 cleanDataName             = bs(currRow[0].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
                 cleanDataUpstreamValue    = bs(currRow[1].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
                 cleanDataDownstreamValue  = bs(currRow[2].encode_contents().decode('utf-8'), 'lxml').get_text().replace('\n', '')
+
+                cleanDataUpstreamValue    = cleanDataUpstreamValue.split()[0]
+                cleanDataDownstreamValue  = cleanDataDownstreamValue.split()[0]
                 plasmaData[cleanDataName] = [cleanDataUpstreamValue, cleanDataDownstreamValue]
 
-        worksheet = workbook.add_worksheet(generalData['Fractional day of year'] + '_' + counter)
+        worksheet = workbook.add_worksheet(str(int(counter) + 1))
         row       = 1
         column    = 0
 
